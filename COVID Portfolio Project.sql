@@ -153,7 +153,7 @@ ORDER BY location, date
 
 
 
---- USE CTE
+--- Using CTE to look at Total New Vaccinations vs. Population as a Percentage
 -- We use this Common Table Expression because 'total_vaccination_count' can't be referred to within the same query it's created
 
 WITH PopVsVac (continent, location, date, population, new_vaccinations, total_vaccination_count)
@@ -180,8 +180,8 @@ FROM PopVsVac
 
 
 
---- USE TABLE
--- Creating a Temp Table instead to achieve the same effect as CTE
+--- Using TEMP TABLE to look at Total New Vaccinations vs. Population as a Percentage
+-- Creating a Temp Table instead to achieve the same effect as with CTE
 
 DROP TABLE IF EXISTS DosesPerPop
 CREATE TABLE DosesPerPop
